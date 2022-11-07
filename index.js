@@ -19,7 +19,7 @@ const schema = Joi.object().keys({
   name: Joi.string().min(1).required(),
 });
 
-app.post("/confirmarPresenca", (req, res) => {
+app.post("/confirmarpresenca", (req, res) => {
   const result = schema.validate(req.body, Joi.messages);
 
   if (result.error) {
