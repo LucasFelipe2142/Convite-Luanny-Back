@@ -5,7 +5,7 @@ import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 dotenv.config();
 
-const mongoClient = new MongoClient(process.env.URI);
+const mongoClient = new MongoClient(process.env.MONGO_URI);
 
 let db;
 
@@ -45,7 +45,9 @@ app.get("/confirmarPresenca", (req, res) => {
     .then((user) => res.send(user));
 });
 
-app.listen(5000);
+app.listen(process.env.PORT, () => {
+  console.log("Server running on port " + process.env.PORT);
+});
 
 function start() {
   const app = express();
