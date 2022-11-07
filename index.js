@@ -38,13 +38,6 @@ app.post("/confirmarPresenca", (req, res) => {
   }
 });
 
-app.get("/confirmarPresenca", (req, res) => {
-  db.collection("confirmados")
-    .find()
-    .toArray()
-    .then((user) => res.send(user));
-});
-
 app.listen(process.env.PORT, () => {
   console.log("Server running on port " + process.env.PORT);
 });
